@@ -3467,7 +3467,7 @@ input[type=button].btn-block {
   min-height: 1.5rem;
   padding-left: 1.5rem;
   -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+  color-adjust: exact;
 }
 
 .custom-control-inline {
@@ -10136,7 +10136,7 @@ section.resume-section .resume-section-content {
 .columnPhoto {
   -ms-flex: 50%; /* IE10 */
   flex: 50%;
-  max-width: 50%;
+  /* max-width: 50%; */
   padding: 0 4px;
 }
 
@@ -10146,20 +10146,35 @@ section.resume-section .resume-section-content {
   width: 100%;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .columnPhoto {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
+.header2 {
+  text-align: center;
+  padding: 32px;
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .columnPhoto {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
+/* Style the buttons */
+.btn2 {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn2:hover {
+  background-color: #ddd;
+}
+
+.btn2.active {
+  background-color: #666;
+  color: white;
+}
+.ulClass {
+  font-size:x-large;
+}
+
+@media (max-width: 600px) {
+  .ulClass {
+    font-size: 1rem;
   }
 }

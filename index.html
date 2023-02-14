@@ -233,6 +233,13 @@
                   <center>  <u style="color: black"><h2 class="mb-5">Photos</h2></u> </center>
                     <hr style="height:2px;border-width:1;color:black;background-color:black; opacity:0.5">
 
+                    <!-- Header -->
+                    <div class="header2" id="myHeader">
+                        <p>Click to change the grid view</p>
+                        <button class="btn2" onclick="one()">1</button>
+                        <button class="btn2 active" onclick="two()">2</button>
+                    </div>
+
                     <!-- Photo Grid -->
                     <div class="rowPhoto"> 
                         <div class="columnPhoto">
@@ -254,6 +261,41 @@
 							<img src="/assets/Dev/web_8.jpg" style="width:100%">
                         </div>  
                     </div>
+
+                    <script>
+                        // Get the elements with class="column"
+                        var elements = document.getElementsByClassName("columnPhoto");
+                        
+                        // Declare a loop variable
+                        var i;
+                        
+                        // Full-width images
+                        function one() {
+                            for (i = 0; i < elements.length; i++) {
+                            elements[i].style.msFlex = "100%";  // IE10
+                            elements[i].style.flex = "100%";
+                          }
+                        }
+                        
+                        // Two images side by side
+                        function two() {
+                          for (i = 0; i < elements.length; i++) {
+                            elements[i].style.msFlex = "50%";  // IE10
+                            elements[i].style.flex = "50%";
+                          }
+                        }
+                        
+                        // Add active class to the current button (highlight it)
+                        var header = document.getElementById("myHeader");
+                        var btns = header.getElementsByClassName("btn2");
+                        for (var i = 0; i < btns.length; i++) {
+                          btns[i].addEventListener("click", function() {
+                            var current = document.getElementsByClassName("active");
+                            current[1].className = current[1].className.replace(" active", "");
+                            this.className += " active";
+                          });
+                        }
+                    </script>
 
 
                     <hr style="height:2px;border-width:1;color:black;background-color:black; opacity:0.5">
@@ -277,7 +319,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <ul>
+                                    <ul class="ulClass">
 										<li>Travel</li>
 										<li>Photography</li>
 										<li>Cooking</li>
@@ -286,7 +328,7 @@
                                 </td>
                                 <td></td>
                                 <td>
-                                    <ul>
+                                    <ul class="ulClass">
 										<li>Technology</li>
 										<li>Finance</li>
 										<li>Geo Politics</li>
